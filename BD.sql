@@ -27,8 +27,8 @@ CREATE TABLE IF NOT EXISTS productos (
   SerieProducto VARCHAR(300) DEFAULT NULL,
   ImagenProducto VARCHAR(300) DEFAULT NULL,
   nombreProducto VARCHAR(300) DEFAULT NULL,
-  idProveedor INT  NOT NULL,
-  idCategoria INT  NOT NULL,
+  idProveedor INT NOT NULL,
+  idCategoria INT NOT NULL,
   precioUnidad DECIMAL(10,2) DEFAULT NULL,
   stock DECIMAL(5,2) DEFAULT NULL,
   categoriaProducto VARCHAR(20) DEFAULT NULL,
@@ -66,8 +66,8 @@ CREATE TABLE IF NOT EXISTS empleados (
 -- Tabla: pedido (antes llamada boleta)
 CREATE TABLE IF NOT EXISTS pedido (
   idPedido INT NOT NULL  AUTO_INCREMENT,
-  idCliente INT(5) NOT NULL  ,
-  idEmpleado INT NOT NULL  ,
+  idCliente INT(5) NOT NULL,
+  idEmpleado INT NOT NULL,
   formaPago VARCHAR(10) DEFAULT NULL,  -- Añadida columna formaPago
   fechaHora DATETIME DEFAULT CURRENT_TIMESTAMP,  -- Añadida columna fechaHora
   monto DECIMAL(10,2) DEFAULT NULL,
@@ -82,9 +82,9 @@ CREATE TABLE IF NOT EXISTS pedido (
 
 -- Tabla: detallesPedidos
 CREATE TABLE IF NOT EXISTS detallesPedidos (
-  idPedido INT NOT NULL  AUTO_INCREMENT,
-  idProducto INT NOT NULL  ,
-  idBoleta INT NOT NULL  ,
+  idPedido INT NOT NULL,
+  idProducto INT NOT NULL,
+  idBoleta INT NOT NULL  AUTO_INCREMENT,
   precioUnidad DECIMAL(10,2) DEFAULT NULL,
   cantidad INT DEFAULT NULL,
   estadoDetalle INT DEFAULT NULL,
